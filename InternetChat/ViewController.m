@@ -87,6 +87,10 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         textScroll.text = s;
     });
+    if(textScroll.text.length > 0 ) {
+        NSRange bottom = NSMakeRange(textScroll.text.length -1, 1);
+        [textScroll scrollRangeToVisible:bottom];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
